@@ -1,0 +1,11 @@
+.BtnStyles {
+  font-size: 16px !important;
+  text-decoration: underline !important;
+  color: #000000 !important;
+}
+
+.BtnStyles:disabled {
+  color: rgba(78, 78, 78, 0.5) !important;
+  text-decoration: none !important;
+  opacity: 0.8;
+}
