@@ -8,6 +8,7 @@ import {
   DateIcon,
   TimeIcon
 } from '../Icons/svg_icons';
+import moment from 'moment';
 
 import "react-datepicker/dist/react-datepicker.css";
 import '../../styles/ReservationDatePickerInput.css';
@@ -82,6 +83,13 @@ const useStyles = makeStyles((theme) => ({
 const ReservationDatePickerInput = (props) => {
   const classes= useStyles();
 
+  const filterPassedTime = time => {
+    const currentDate = new Date();
+    const selectedDate = new Date(time);
+
+    return currentDate.getTime() < selectedDate.getTime();
+  }
+
   return (
     <div className={classes.card}>
       <div className={classes.cardHead}>
@@ -103,6 +111,8 @@ const ReservationDatePickerInput = (props) => {
           timeIntervals={15}
           timeCaption="Arrival Time"
           timeFormat="HH:mm"
+          minDate={moment().toDate()}
+          filterTime={filterPassedTime}
           inline
         />
       </div>

@@ -151,6 +151,10 @@
   margin-top: 118px;
 }
 
+.react-datepicker__time-list-item--disabled + li {
+  margin-top: 118px;
+}
+
 .react-datepicker__time-list-item--selected {
   line-height: 24px;
   letter-spacing: 0.12px;
@@ -167,4 +171,8 @@
 
 .react-datepicker__day {
   line-height: 2rem;
+}
+
+.react-datepicker__time-list-item--disabled {
+  display: none;
 }
